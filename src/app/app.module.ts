@@ -7,18 +7,24 @@ import { UserPageComponent } from './ui/user-page/user-page.component';
 import { HomePageComponent } from './ui/home-page/home-page.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SuccessComponent } from './components/success/success.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserPageComponent,
     HomePageComponent,
-    NavBarComponent
+    NavBarComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideClientHydration()
