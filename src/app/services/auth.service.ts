@@ -12,11 +12,11 @@ export class AuthService {
 
   constructor(private http: HttpClient ) { }
   getRequestToken():Observable<GetRequestTokenResponse>{
-    return this.http.get<GetRequestTokenResponse>(`${environment.baseUrl}/authentication/token/new?${environment.apiKey}`);
+    return this.http.get<GetRequestTokenResponse>(`${environment.baseUrl}/authentication/token/new?${environment.apikey}`);
   }
   createSession(token: string):Observable<CreateSessionResponse>{
     console.log(token);
-    return this.http.post<CreateSessionResponse>(`${environment.baseUrl}/authentication/session/new?${environment.apiKey}`,
+    return this.http.post<CreateSessionResponse>(`${environment.baseUrl}/authentication/session/new?${environment.apikey}`,
       {
         request_token: token
       },
