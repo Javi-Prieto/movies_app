@@ -1,1 +1,45 @@
-<p>user-page works!</p>
+<div class="row container-fluid w-100 mt-3">
+    <div class="col-4 d-flex justify-content-end">
+        <img [src]="getUserAvatar()" alt="">
+    </div>
+    <div class="col-8 display-2 align-items-center d-flex">
+        {{user.username}}
+    </div>
+    <div class="col-12 d-flex justify-content-center">
+        <button class="btn btn-outline-secondary">Lists</button>
+        
+    </div>
+    <hr class="mt-1 m-auto" />
+    @for (list of listList; track list.id) {
+        <app-list-item [list]="list" class="col-12"></app-list-item>
+    }
+    <button class="col-12 btn btn-primary m-2" (click)="open(addModal, $event)">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+          </svg>
+    </button>
+    
+</div>
+
+<ng-template #addModal let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<form>
+			<div class="mb-3" formGroupName="listForm">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Introduce el nombre de la lista</label>
+                    <input type="text" class="form-control" id="name" name="name" formControlName="listName" aria-describedby="codRef" [(ngModel)]="name" >
+                  </div>
+                  <div class="mb-3">
+                    <label for="content" class="form-label">Introduce la descripcion de la lista</label>
+                    <input type="text" class="form-control" id="content" name="content" formControlName="listDesc" [(ngModel)]="desc">
+                  </div>
+                  <button type="button" class="btn btn-dark" (click)="toSave()" >Guardar</button>
+                  <!--[disabled]="listForm.invalid"-->
+			</div>
+		</form>
+	</div>
+</ng-template>

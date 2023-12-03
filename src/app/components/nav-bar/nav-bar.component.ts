@@ -22,7 +22,7 @@ export class NavBarComponent implements OnInit{
   createRequestToken() {
     this.serviceAuth.getRequestToken().subscribe(answ => {
       localStorage.setItem('REQUEST_TOKEN', answ.request_token);
-      window.location.href = `https://www.themoviedb.org/authenticate/${localStorage.getItem('REQUEST_TOKEN')}?redirect_to=http://localhost:4200/succes`;
+      window.location.href = `https://www.themoviedb.org/authenticate/${localStorage.getItem('REQUEST_TOKEN')}?redirect_to=http://localhost:4200/success`;
     });
   }
   isUserRegister():boolean{

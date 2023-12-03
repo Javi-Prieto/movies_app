@@ -10,6 +10,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SuccessComponent } from './components/success/success.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ListItemComponent } from './components/list-item/list-item.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     UserPageComponent,
     HomePageComponent,
     NavBarComponent,
-    SuccessComponent
+    SuccessComponent,
+    ListItemComponent
   ],
   imports: [
     BrowserModule,
