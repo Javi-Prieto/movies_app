@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <h1 class="h1 display-4">{{listInfo.name}}</h1>
+    <button class="btn btn-danger" (click)="clearList()">Clear the list</button>
+    <div class="row mt-3">
+        @for (item of list; track item.id) {
+    
+            <app-item-item [item]="item" class="col-4"></app-item-item>
+        }
+        
+    </div>
+</div>
+
+

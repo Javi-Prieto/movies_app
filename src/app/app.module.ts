@@ -11,6 +11,8 @@ import { SuccessComponent } from './components/success/success.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ListItemComponent } from './components/list-item/list-item.component';
+import { ListPageComponent } from './ui/list-page/list-page.component';
+import { ItemItemComponent } from './components/item-item/item-item.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ListItemComponent } from './components/list-item/list-item.component';
     HomePageComponent,
     NavBarComponent,
     SuccessComponent,
-    ListItemComponent
+    ListItemComponent,
+    ListPageComponent,
+    ItemItemComponent
   ],
   imports: [
     BrowserModule,
