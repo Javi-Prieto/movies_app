@@ -4,7 +4,7 @@ import { UserDetailsResponse } from '../../models/user-details.interface';
 import { environment } from '../../../environments/environment.development';
 import { List } from '../../models/lists-list.interface';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-user-page',
@@ -15,9 +15,9 @@ export class UserPageComponent implements OnInit {
 
   user!: UserDetailsResponse;
   listList !: List[];
-  listForm = this.formBuilder.group({
-    listName: ['', Validators.required],
-    listDesc: ['', Validators.required]
+  listForm = new FormGroup({
+    listName: new FormControl('', [Validators.required]),
+    listDesc: new FormControl('', [Validators.required])
   });
   name = "";
   desc = "";

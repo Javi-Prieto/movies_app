@@ -8,13 +8,18 @@ import { AccountService } from '../../services/account.service';
   styleUrl: './list-item.component.css'
 })
 export class ListItemComponent {
+
   @Input() list !: List;
   constructor(private accService: AccountService){}
 
-  deleteList(){
+  deleteList(event: MouseEvent){
+    event.stopPropagation();
     this.accService.deleteList(this.list.id).subscribe(ans => {
       window.location.reload();
     }
     );
+  }
+  openPopOver(event: MouseEvent) {
+    event.stopPropagation();
   }
 }
