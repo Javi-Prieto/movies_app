@@ -31,7 +31,7 @@ export class UserPageComponent implements OnInit {
     });
     this.serviceAcc.getListFromAcc().subscribe(ans => {
       this.listList = ans.results;
-    })
+    });
   }
 
   getUserAvatar():string{

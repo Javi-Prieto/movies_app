@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ListItemComponent } from './components/list-item/list-item.component';
 import { ListPageComponent } from './ui/list-page/list-page.component';
 import { ItemItemComponent } from './components/item-item/item-item.component';
+import { MovieItemComponent } from './components/movie-item/movie-item.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ItemItemComponent } from './components/item-item/item-item.component';
     SuccessComponent,
     ListItemComponent,
     ListPageComponent,
-    ItemItemComponent
+    ItemItemComponent,
+    MovieItemComponent
   ],
   imports: [
     BrowserModule,

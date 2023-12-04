@@ -1,1 +1,24 @@
-<p>home-page works!</p>
+<h1 class="h1 display-2 fw-bold mt-2 mb-2">POPULAR MOVIES</h1>
+@for (movie of moviesInfor.results; track $index) {
+    <app-movie-item [movie]="movie" [movieIndex]="$index" (toEmit)="open($event, content)"></app-movie-item>
+}
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">{{movieSelected.title}}</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<form >
+			<select class="form-select" aria-label="Default select example" >
+                <option selected>Open this select menu</option>
+                @for (list of listList.results; track $index) {
+                    <option [value]="list.id" (change)="saveData(list.id)">{{list.name}}</option>
+                }
+            </select>
+            <button class="btn btn-primary" (click)="onCreateList()">Create list</button>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-dark" (click)="onSave()">Save</button>
+	</div>
+</ng-template>

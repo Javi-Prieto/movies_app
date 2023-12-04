@@ -1,0 +1,8 @@
+<div class="card" style="width: 18rem;">
+    <img [src]="setImgUrl()" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{movie.title}}</h5>
+      <p class="card-text">{{movie.overview}}</p>
+      <a  class="btn btn-primary" (click)="openModal()" >Add to list</a>
+    </div>
+  </div>

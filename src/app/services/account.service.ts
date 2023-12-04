@@ -84,6 +84,19 @@ export class AccountService {
         'Authorization': `Bearer ${environment.tmdbToken}`
       }
     })
+  };
+  addMovie(listId:string, mediaId:string):Observable<any>{
+    let session_id = localStorage.getItem('SESSION_ID');
+    return this.http.post<any>(`${environment.baseUrl}/list/${listId}/add_item?session_id=${session_id}&${environment.apikey}`, {
+      media_id: mediaId
+    },{
+      headers:{
+        'Authorization': `Bearer ${environment.tmdbToken}`,
+        'content-type': 'application/json'
+      }
+    }
+    
+    );
   }
 
 
